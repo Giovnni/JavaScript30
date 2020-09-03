@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+html {
+    background: url(./media/background.jpg);
+    background-size: cover;
+    font-family: 'Reenie Beanie', cursive;
+}
+
+body {
+    --rotate-position: -90deg;
+}
+
+h1 {
+    text-align: center;
+    font-size: 100px;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock {
+    height: 400px;
+    width: 400px;
+    border: 5px solid black;
+    border-radius: 100%;
+    background: lightgray;
+    position: relative;
+}
+
+.clock-number {
+    font-size: 50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.number {
+    margin: 0;
+}
+
+.middle-clock-circle {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    top: 49%;
+    left: 49%;
+    border-radius: 100%;
+    background: black;
+}
+
+.pointer {
+    position: absolute;
+    width: 35%;
+    height: 2%;
+    top: 49%;
+    left: 15%;
+    border-radius: 100px;
+    background: white;
+    transform-origin: center right;
+    transform: rotate(90deg);
+    transition: all 0.4s;
+    font-weight: bold;
+}
+
+.pointer-seconds {
+    background: lightskyblue;
+}
+
+.pointer-minutes {
+    background: lightgreen;
+}
+
+.pointer-hours {
+    background: lightcoral;
+}

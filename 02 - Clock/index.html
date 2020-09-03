@@ -1,0 +1,55 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9 O'Clock</title>
+    <link rel="stylesheet" href="style.css">   
+</head>
+<body>
+    <h1>The Clock</h1>
+    <div class="clock-container">
+        <div class="clock" id="clocking">
+            <div class="middle-clock-circle"></div>
+            <div class="pointer pointer-seconds">seconds</div>
+            <div class="pointer pointer-minutes">minutes</div>
+            <div class="pointer pointer-hours">hours</div>
+        </div>
+    </div>
+
+    <script>
+        let rotateDiv = -90;
+        let rotateNumber = -270;
+        for(let i = 12; i > 0; i--) {
+            document.getElementById("clocking").innerHTML += '<div class="clock-number" style="transform: rotate('+rotateDiv+'deg) translate(175px);"><p class="number" style="transform: rotate('+rotateNumber+'deg)" id="number'+i+'">'+i+'</p></div>';
+            rotateDiv -= 30; 
+            rotateNumber += 30;
+        }
+
+        const secondsPointer = document.querySelector('.pointer-seconds');
+        const minutesPointer = document.querySelector('.pointer-minutes');
+        const hoursPointer = document.querySelector('.pointer-hours');
+
+        function setTime() {
+            let time = new Date();
+
+            const seconds = time.getSeconds();
+            const secondsPointerDegrees = ((seconds / 60) * 360) + 90;
+            const minutes = time.getMinutes();
+            const minutesPointerDegrees = ((minutes / 60) * 360) + 90;
+            const hours = time.getHours();
+            const hoursPointerDegrees = ((hours / 12) * 360) + 90;
+
+            secondsPointer.style.transform = 'rotate('+secondsPointerDegrees+'deg)';
+            minutesPointer.style.transform = 'rotate('+minutesPointerDegrees+'deg)';
+            hoursPointer.style.transform = 'rotate('+hoursPointerDegrees+'deg)';
+
+            
+            console.log(time.getMinutes())
+            console.log(time.getHours())
+        }
+        
+        setInterval(setTime, 1000);
+
+    </script>
+</body>
+</html>
