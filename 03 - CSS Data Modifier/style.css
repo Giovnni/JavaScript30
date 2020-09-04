@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --size: 100vh;
+    --blur: 0;
+    --backgroundColor: #C1A4A4;
+}
+
+body {
+    background: var(--backgroundColor);
+    font-family: 'Grandstander', cursive;
+}
+
+h1 {
+    font-weight: 900;
+    text-align: center;
+    font-size: 50px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.picture-parameters-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 100px;
+    font-size: 30px;
+    background: lightgrey;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px black;
+}
+
+.parameter-container {
+    margin: 10px;
+}
+
+#size-input-container, #blur-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.slider {
+    appearance: none;
+    height: 25px;
+    background: lightcoral;
+    border-radius: 100px;
+    border: 2px solid black;
+}
+
+.slider::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    border: 2px solid lightgray;
+}
+
+.slider::-webkit-slider-thumb {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 2px solid black;
+}
+
+
+
+.slider-value {
+    font-size: 25px;
+    margin: 0 10px;
+    width: 25px;
+}
+
+.input-name {
+    margin-top:0;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 542px;
+}
+
+img {
+    width: var(--size);
+    filter: blur(var(--blur));
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px black;
+}
